@@ -20,10 +20,19 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
 ))
 
 def get_all_countries():
-    """Fetches ALL countries using REST Countries API."""
+    """Fetches ALL countries using REST Countries API with error handling."""
     print("--- Fetching global country list ---")
     response = requests.get("https://restcountries.com/v3.1/all")
-    return [c['name']['common'] for c in response.json()]
+    
+    data = response.json()
+    
+    # Check if the API returned a list (success) or a dictionary (likely an error)
+    if isinstance(data, list):
+        return [c['name']['common'] for c in data]
+    else:
+        print(f"⚠️ API Error: {data.get('message', 'Unknown error')}")
+        # Fallback to a small list of major countries if the API is down
+        return ["USA", "United Kingdom", "Canada", "Germany", "France", "Japan", "Australia"]
 
 def get_top_tracks_for_country(country_name, limit=5):
     """Finds the official 'Top 50' playlist and returns the top N tracks."""
