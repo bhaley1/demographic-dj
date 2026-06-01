@@ -9,7 +9,7 @@ import csv
 import json
 import time
 import requests
-from datetime import datetime, timedelta
+from datetime import datetime
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -43,16 +43,18 @@ def get_access_token():
     return token
 
 
-def get_current_user_id(headers):
-    """Get the Spotify user ID for the authorized account."""
+def get_current_user(headers):
+    """Get the Spotify user ID and display name."""
     response = requests.get(f"{SPOTIFY_API}/me", headers=headers)
     response.raise_for_status()
-    return response.json()["id"]
+    data = response.json()
+    return data["id"], data.get("display_name", data["id"])
 
 
 def search_track(track_name, artist_name, headers):
     """Search Spotify for a track and return its URI."""
-    query = f"track:{track_name} artist:{artist_name}"
+    # Clean up track/artist names for better search results
+    query = f"{track_name} {artist_name}"
     response = requests.get(
         f"{SPOTIFY_API}/search",
         params={"q": query, "type": "track", "limit": 1},
@@ -68,7 +70,7 @@ def search_track(track_name, artist_name, headers):
 
 def get_this_weeks_tracks():
     """
-    Read global_track_history.csv and return tracks from the most recent scan date.
+    Read global_track_history.csv and return tracks from the most recent scan date only.
     """
     filename = "global_track_history.csv"
     if not os.path.isfile(filename):
@@ -85,7 +87,7 @@ def get_this_weeks_tracks():
         print("❌ CSV is empty.")
         exit(1)
 
-    # Get the most recent date in the file
+    # Get only the most recent date
     latest_date = max(row["Date"] for row in rows)
     this_week = [row for row in rows if row["Date"] == latest_date]
     print(f"📅 Using tracks from: {latest_date} ({len(this_week)} entries)")
@@ -93,9 +95,12 @@ def get_this_weeks_tracks():
 
 
 def create_playlist(user_id, name, description, headers):
-    """Create a new public playlist and return its ID."""
+    """
+    Create a new public playlist using the /me/playlists endpoint.
+    This avoids the 403 that occurs with /users/{id}/playlists.
+    """
     response = requests.post(
-        f"{SPOTIFY_API}/users/{user_id}/playlists",
+        f"{SPOTIFY_API}/me/playlists",
         headers={**headers, "Content-Type": "application/json"},
         data=json.dumps({
             "name": name,
@@ -103,6 +108,10 @@ def create_playlist(user_id, name, description, headers):
             "public": True,
         }),
     )
+    if response.status_code == 403:
+        print("❌ 403 Forbidden — your refresh token may be missing playlist scope.")
+        print("   Re-run authorize_spotify.py locally and update SPOTIPY_REFRESH_TOKEN secret.")
+        exit(1)
     response.raise_for_status()
     playlist = response.json()
     print(f"🎵 Created playlist: {playlist['name']}")
@@ -126,30 +135,40 @@ def main():
     # Auth
     access_token = get_access_token()
     headers = {"Authorization": f"Bearer {access_token}"}
-    user_id = get_current_user_id(headers)
-    print(f"👤 Logged in as: {user_id}")
+    user_id, display_name = get_current_user(headers)
+    print(f"👤 Logged in as: {display_name} ({user_id})")
 
-    # Load this week's tracks
+    # Load this week's tracks (most recent date only)
     tracks, date_str = get_this_weeks_tracks()
 
-    # Search Spotify for each track
-    print(f"\nSearching Spotify for {len(tracks)} tracks...")
+    # Deduplicate by track+artist before searching
+    seen = set()
+    unique_tracks = []
+    for t in tracks:
+        key = (t["Track"].lower().strip(), t["Artist"].lower().strip())
+        if key not in seen:
+            seen.add(key)
+            unique_tracks.append(t)
+    print(f"🔍 Unique track+artist combos this week: {len(unique_tracks)}")
+
+    # Search Spotify for each unique track
+    print(f"Searching Spotify...")
     track_uris = []
     found = 0
     not_found = 0
 
-    for t in tracks:
+    for t in unique_tracks:
         uri = search_track(t["Track"], t["Artist"], headers)
         if uri:
             track_uris.append(uri)
             found += 1
         else:
             not_found += 1
-        time.sleep(0.05)  # rate limit buffer
+        time.sleep(0.05)
 
-    # Deduplicate
+    # Final dedup on URIs
     track_uris = list(dict.fromkeys(track_uris))
-    print(f"✅ Found: {found} | Not found: {not_found} | Unique: {len(track_uris)}")
+    print(f"✅ Found: {found} | Not found: {not_found} | Unique URIs: {len(track_uris)}")
 
     if not track_uris:
         print("❌ No tracks found on Spotify. Exiting.")
@@ -160,7 +179,7 @@ def main():
     playlist_name = f"Global Top 5s — {date_formatted}"
     playlist_desc = f"Top 5 tracks from 68 countries via Last.fm. Week of {date_formatted}."
 
-    # Create playlist and add tracks
+    # Create playlist using /me/playlists (correct endpoint)
     playlist_id = create_playlist(user_id, playlist_name, playlist_desc, headers)
     add_tracks_to_playlist(playlist_id, track_uris, headers)
 
