@@ -1,7 +1,7 @@
 """
-Reads this week's tracks from global_track_history.csv and creates
-a Spotify playlist on your account. Runs in GitHub Actions using a
-stored refresh token — no browser interaction needed.
+Reads this week's tracks from global_track_history.csv, ranks them by
+how many countries they appeared in (each country weighted equally),
+takes the top 20, and creates a Spotify playlist.
 """
 
 import os
@@ -10,6 +10,7 @@ import json
 import time
 import requests
 from datetime import datetime
+from collections import Counter
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -24,6 +25,7 @@ if not all([CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN]):
     exit(1)
 
 SPOTIFY_API = "https://api.spotify.com/v1"
+TOP_N = 20  # Number of tracks to include in the playlist
 
 
 def get_access_token():
@@ -49,7 +51,7 @@ def get_current_user(headers):
 
 
 def search_track(track_name, artist_name, headers, retries=3):
-    """Search Spotify with retry logic for rate limiting."""
+    """Search Spotify with retry on rate limit."""
     queries = [
         f"track:{track_name} artist:{artist_name}",
         f"{track_name} {artist_name}",
@@ -75,14 +77,18 @@ def search_track(track_name, artist_name, headers, retries=3):
     return None
 
 
-def get_this_weeks_tracks():
-    filename = "global_track_history.csv"
-    if not os.path.isfile(filename):
-        print(f"❌ {filename} not found.")
+def get_top_global_tracks(csv_file="global_track_history.csv", top_n=TOP_N):
+    """
+    Read the most recent week from the CSV and rank tracks by number of
+    countries they appeared in. Every country counts equally — no population
+    or stream weighting.
+    """
+    if not os.path.isfile(csv_file):
+        print(f"❌ {csv_file} not found.")
         exit(1)
 
     rows = []
-    with open(filename, encoding="utf-8") as f:
+    with open(csv_file, encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
             rows.append(row)
@@ -91,10 +97,37 @@ def get_this_weeks_tracks():
         print("❌ CSV is empty.")
         exit(1)
 
+    # Most recent date only
     latest_date = max(row["Date"] for row in rows)
     this_week = [row for row in rows if row["Date"] == latest_date]
-    print(f"📅 Using tracks from: {latest_date} ({len(this_week)} entries)")
-    return this_week, latest_date
+    print(f"📅 Week of: {latest_date} | Entries: {len(this_week)}")
+
+    # Count how many distinct countries each track appears in
+    # Key: (track, artist) — lowercased for matching
+    country_counts = Counter()
+    track_display = {}  # store original casing for display/search
+
+    for row in this_week:
+        track = row["Track"].strip()
+        artist = row["Artist"].strip()
+        country = row["Country"].strip()
+        key = (track.lower(), artist.lower())
+        country_counts[key] += 1
+        track_display[key] = (track, artist)  # keep original casing
+
+    # Sort by country count descending, take top N
+    top_tracks = sorted(country_counts.items(), key=lambda x: x[1], reverse=True)[:top_n]
+
+    print(f"\n🌍 Top {top_n} most globally widespread tracks this week:")
+    print(f"{'Rank':<5} {'Countries':>9}  {'Artist':<25} {'Track'}")
+    print("-" * 70)
+    results = []
+    for rank, (key, count) in enumerate(top_tracks, 1):
+        track, artist = track_display[key]
+        print(f"{rank:<5} {count:>9}  {artist:<25} {track}")
+        results.append({"track": track, "artist": artist, "country_count": count})
+
+    return results, latest_date
 
 
 def create_playlist(name, description, headers):
@@ -108,7 +141,7 @@ def create_playlist(name, description, headers):
         exit(1)
     response.raise_for_status()
     playlist = response.json()
-    print(f"🎵 Created playlist: {playlist['name']}")
+    print(f"\n🎵 Created playlist: {playlist['name']}")
     return playlist["id"]
 
 
@@ -127,49 +160,42 @@ def add_tracks_to_playlist(playlist_id, track_uris, headers):
 def main():
     access_token = get_access_token()
     headers = {"Authorization": f"Bearer {access_token}"}
-    user_id, display_name = get_current_user(headers)
+    _, display_name = get_current_user(headers)
     print(f"👤 Logged in as: {display_name}")
 
-    tracks, date_str = get_this_weeks_tracks()
+    # Get top 20 tracks ranked by country count (equal weighting)
+    top_tracks, date_str = get_top_global_tracks(top_n=TOP_N)
 
-    # Deduplicate by track+artist
-    seen = set()
-    unique_tracks = []
-    for t in tracks:
-        key = (t["Track"].lower().strip(), t["Artist"].lower().strip())
-        if key not in seen:
-            seen.add(key)
-            unique_tracks.append(t)
-    print(f"🔍 Unique tracks this week: {len(unique_tracks)}")
-
-    # Search with longer delay to avoid rate limiting
-    print("Searching Spotify (this may take a minute)...")
+    # Search Spotify for each — only 20 searches, fast and under rate limit
+    print(f"\nSearching Spotify for {len(top_tracks)} tracks...")
     track_uris = []
     found = 0
     not_found = 0
 
-    for i, t in enumerate(unique_tracks, 1):
-        uri = search_track(t["Track"], t["Artist"], headers)
+    for t in top_tracks:
+        uri = search_track(t["track"], t["artist"], headers)
         if uri:
             track_uris.append(uri)
             found += 1
+            print(f"  ✅ {t['artist']} — {t['track']}")
         else:
             not_found += 1
-        # 0.5s delay between requests to stay under rate limit
-        time.sleep(0.5)
-        if i % 10 == 0:
-            print(f"  [{i}/{len(unique_tracks)}] Found so far: {found}")
+            print(f"  ⊘  {t['artist']} — {t['track']} (not found on Spotify)")
+        time.sleep(0.3)
 
-    track_uris = list(dict.fromkeys(track_uris))
-    print(f"✅ Found: {found} | Not found: {not_found} | Unique URIs: {len(track_uris)}")
+    print(f"\n✅ Found: {found} | Not found: {not_found}")
 
     if not track_uris:
         print("❌ No tracks found on Spotify. Try again in a few minutes.")
         exit(1)
 
+    # Create playlist
     date_formatted = datetime.strptime(date_str, "%Y-%m-%d").strftime("%b %d, %Y")
-    playlist_name = f"Global Top 5s — {date_formatted}"
-    playlist_desc = f"Top 5 tracks from 68 countries via Last.fm. Week of {date_formatted}."
+    playlist_name = f"Global Top 20 — {date_formatted}"
+    playlist_desc = (
+        f"Top 20 tracks ranked by number of countries charting (68 countries, "
+        f"equal weighting). Week of {date_formatted}. Powered by Last.fm."
+    )
 
     playlist_id = create_playlist(playlist_name, playlist_desc, headers)
     add_tracks_to_playlist(playlist_id, track_uris, headers)
