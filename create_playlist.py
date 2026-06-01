@@ -27,7 +27,7 @@ SPOTIFY_API = "https://api.spotify.com/v1"
 
 
 def get_access_token():
-    """Exchange refresh token for a fresh access token. No user interaction needed."""
+    """Exchange refresh token for a fresh access token."""
     response = requests.post(
         "https://accounts.spotify.com/api/token",
         data={
@@ -53,28 +53,40 @@ def get_current_user(headers):
 
 def search_track(track_name, artist_name, headers):
     """Search Spotify for a track and return its URI."""
-    # Clean up track/artist names for better search results
+    # Try structured query first
+    query = f"track:{track_name} artist:{artist_name}"
+    response = requests.get(
+        f"{SPOTIFY_API}/search",
+        params={"q": query, "type": "track", "limit": 1},
+        headers=headers,
+    )
+    if response.status_code == 200:
+        items = response.json().get("tracks", {}).get("items", [])
+        if items:
+            return items[0]["uri"]
+
+    # Fall back to plain text search
     query = f"{track_name} {artist_name}"
     response = requests.get(
         f"{SPOTIFY_API}/search",
         params={"q": query, "type": "track", "limit": 1},
         headers=headers,
     )
-    if response.status_code != 200:
-        return None
-    items = response.json().get("tracks", {}).get("items", [])
-    if items:
-        return items[0]["uri"]
+    if response.status_code == 200:
+        items = response.json().get("tracks", {}).get("items", [])
+        if items:
+            return items[0]["uri"]
+
     return None
 
 
 def get_this_weeks_tracks():
     """
-    Read global_track_history.csv and return tracks from the most recent scan date only.
+    Read global_track_history.csv and return unique tracks from the most recent date.
     """
     filename = "global_track_history.csv"
     if not os.path.isfile(filename):
-        print(f"❌ {filename} not found. Run main.py first.")
+        print(f"❌ {filename} not found.")
         exit(1)
 
     rows = []
@@ -87,6 +99,10 @@ def get_this_weeks_tracks():
         print("❌ CSV is empty.")
         exit(1)
 
+    # Print the first row so we can see the actual column names
+    print(f"📋 CSV columns: {list(rows[0].keys())}")
+    print(f"📋 Sample row: {rows[0]}")
+
     # Get only the most recent date
     latest_date = max(row["Date"] for row in rows)
     this_week = [row for row in rows if row["Date"] == latest_date]
@@ -95,10 +111,7 @@ def get_this_weeks_tracks():
 
 
 def create_playlist(user_id, name, description, headers):
-    """
-    Create a new public playlist using the /me/playlists endpoint.
-    This avoids the 403 that occurs with /users/{id}/playlists.
-    """
+    """Create a new public playlist."""
     response = requests.post(
         f"{SPOTIFY_API}/me/playlists",
         headers={**headers, "Content-Type": "application/json"},
@@ -109,8 +122,7 @@ def create_playlist(user_id, name, description, headers):
         }),
     )
     if response.status_code == 403:
-        print("❌ 403 Forbidden — your refresh token may be missing playlist scope.")
-        print("   Re-run authorize_spotify.py locally and update SPOTIPY_REFRESH_TOKEN secret.")
+        print("❌ 403 Forbidden — re-run authorize_spotify.py and update SPOTIPY_REFRESH_TOKEN secret.")
         exit(1)
     response.raise_for_status()
     playlist = response.json()
@@ -138,27 +150,38 @@ def main():
     user_id, display_name = get_current_user(headers)
     print(f"👤 Logged in as: {display_name} ({user_id})")
 
-    # Load this week's tracks (most recent date only)
+    # Load this week's tracks
     tracks, date_str = get_this_weeks_tracks()
 
-    # Deduplicate by track+artist before searching
+    # Detect column names dynamically
+    sample = tracks[0]
+    track_col = next((k for k in sample.keys() if k.lower() == "track"), None)
+    artist_col = next((k for k in sample.keys() if k.lower() == "artist"), None)
+
+    if not track_col or not artist_col:
+        print(f"❌ Could not find Track/Artist columns. Found: {list(sample.keys())}")
+        exit(1)
+
+    print(f"✅ Using columns: track='{track_col}', artist='{artist_col}'")
+
+    # Deduplicate
     seen = set()
     unique_tracks = []
     for t in tracks:
-        key = (t["Track"].lower().strip(), t["Artist"].lower().strip())
+        key = (t[track_col].lower().strip(), t[artist_col].lower().strip())
         if key not in seen:
             seen.add(key)
             unique_tracks.append(t)
-    print(f"🔍 Unique track+artist combos this week: {len(unique_tracks)}")
+    print(f"🔍 Unique tracks this week: {len(unique_tracks)}")
 
-    # Search Spotify for each unique track
-    print(f"Searching Spotify...")
+    # Search Spotify
+    print("Searching Spotify...")
     track_uris = []
     found = 0
     not_found = 0
 
     for t in unique_tracks:
-        uri = search_track(t["Track"], t["Artist"], headers)
+        uri = search_track(t[track_col], t[artist_col], headers)
         if uri:
             track_uris.append(uri)
             found += 1
@@ -166,20 +189,19 @@ def main():
             not_found += 1
         time.sleep(0.05)
 
-    # Final dedup on URIs
     track_uris = list(dict.fromkeys(track_uris))
     print(f"✅ Found: {found} | Not found: {not_found} | Unique URIs: {len(track_uris)}")
 
     if not track_uris:
-        print("❌ No tracks found on Spotify. Exiting.")
+        print("❌ No tracks found on Spotify.")
+        print("   Check that SPOTIPY_CLIENT_ID and SPOTIPY_CLIENT_SECRET are correct.")
         exit(1)
 
-    # Format date nicely
+    # Create playlist
     date_formatted = datetime.strptime(date_str, "%Y-%m-%d").strftime("%b %d, %Y")
     playlist_name = f"Global Top 5s — {date_formatted}"
     playlist_desc = f"Top 5 tracks from 68 countries via Last.fm. Week of {date_formatted}."
 
-    # Create playlist using /me/playlists (correct endpoint)
     playlist_id = create_playlist(user_id, playlist_name, playlist_desc, headers)
     add_tracks_to_playlist(playlist_id, track_uris, headers)
 
