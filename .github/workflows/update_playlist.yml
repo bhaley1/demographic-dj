@@ -1,8 +1,7 @@
-name: Weekly Spotify Global Top 5 Scan
+name: Weekly Global Top 5 Scan
 
 on:
   schedule:
-    # Runs every Sunday at 00:00 UTC
     - cron: '0 0 * * 0'
   workflow_dispatch:
 
@@ -12,6 +11,8 @@ permissions:
 jobs:
   scan:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,20 +25,15 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run Spotify scan
+      - name: Run scan
+        env:
+          LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
         run: python main.py
 
-      - name: Configure git
+      - name: Commit and push CSV
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Commit and push CSV updates
-        run: |
-          if git diff --quiet global_track_history.csv; then
-            echo "No changes to commit"
-          else
-            git add global_track_history.csv
-            git commit -m "chore: update global track history - $(date +%Y-%m-%d)"
-            git push
-          fi
+          git add global_track_history.csv || true
+          git diff --staged --quiet || git commit -m "chore: update global track history - $(date +%Y-%m-%d)"
+          git push || true
