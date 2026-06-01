@@ -1,45 +1,35 @@
 # demographic-dj
 
-Automated weekly scanner that collects the top 5 tracks from Spotify charts across ~250 countries and logs them to a historical CSV.
+Automated weekly scanner that collects the top 5 tracks from Spotify charts across 60+ countries and logs them to a historical CSV.
 
 ## What This Does
 
 Every week (Sunday 00:00 UTC), GitHub Actions:
-1. Scans Spotify's "Top 50" official charts across all countries
-2. Extracts the top 5 tracks from each country's chart
-3. Appends them to `global_track_history.csv` with date, artist, and track name
+1. Fetches data from Spotify's public charts endpoint (no authentication required)
+2. Collects the top 5 tracks from available country charts
+3. Appends them to `global_track_history.csv` with date, country, artist, and track name
 4. Commits the updated CSV back to the repo
 
 The resulting CSV is a time-series snapshot of global streaming demographics — what's topping charts everywhere, region by region.
 
 ## Setup
 
-### 1. Get Spotify API Credentials
+### 1. Clone the Repo (If You Haven't Already)
 
-Go to [Spotify Developer Dashboard](https://developer.spotify.com/dashboard):
-- Log in or create an account
-- Create a new app
-- Copy your **Client ID** and **Client Secret**
+```bash
+git clone https://github.com/bhaley1/demographic-dj.git
+cd demographic-dj
+```
 
-### 2. Set GitHub Secrets
+### 2. No API Credentials Needed
 
-In your repo, go to **Settings > Secrets and variables > Actions** and add:
-- `SPOTIPY_CLIENT_ID` — your Client ID from Spotify
-- `SPOTIPY_CLIENT_SECRET` — your Client Secret from Spotify
-
-**Important:** When pasting secrets, make sure there are no trailing newlines or spaces.
+Unlike the previous version, this uses Spotify's **public charts endpoint** which requires no authentication. You don't need to set up any GitHub secrets.
 
 ### 3. Local Testing (Optional)
 
 To test locally before the workflow runs:
 
 ```bash
-# Copy the example env file
-cp .env.example .env
-
-# Edit .env and fill in your Spotify credentials
-nano .env
-
 # Install dependencies
 pip install -r requirements.txt
 
@@ -49,28 +39,23 @@ python main.py
 
 This will create/update `global_track_history.csv` locally.
 
-## What Changed From the Original
+## What Changed From the Previous Version
 
 ### Authentication
-- **Before:** Used interactive OAuth flow (`SpotifyOAuth`) with browser redirect. Impossible in CI.
-- **After:** Uses client credentials flow (`SpotifyClientCredentials`). Works headless. No browser needed.
+- **Before:** Required Spotify API credentials (Client ID, Client Secret). Endpoints blocked access without user auth.
+- **After:** Uses Spotify's public charts endpoint at `https://charts.spotify.com/`. No authentication needed.
 
-### Secrets Handling
-- **Before:** Secrets weren't stripped, so trailing newlines caused malformed API requests.
-- **After:** Secrets are explicitly `.strip()`'d before use.
+### Country Support
+- **Before:** Attempted to scan all 250 countries via Spotify's "Top 50" playlists. Most were inaccessible (401 errors).
+- **After:** Scans 60+ countries with actual Spotify chart data available. Country list is curated and maintainable.
 
 ### Error Handling
-- **Before:** Script would hang on auth, then crash on missing CSV file.
-- **After:** Graceful fallbacks — if REST Countries API is down, uses a curated list of countries. If a country's chart doesn't exist, skips it. Returns proper exit codes.
+- **Before:** Crashed on auth failures.
+- **After:** Gracefully skips countries with no chart data.
 
-### Playlist Creation
-- **Before:** Attempted to create a new Spotify playlist each week (needs user auth).
-- **After:** Removed from CI. The script now *only* collects data and logs to CSV. You can manually create/update playlists from the CSV if you want, or extend the script later with a separate manual step that runs locally with user credentials.
-
-### Logging & Debugging
-- Added progress counters (`[N/250]`) so you can see the scan progress.
-- Better error messages if Spotify API credentials are missing or invalid.
-- Clearer output distinguishing between successful grabs, skipped countries, and errors.
+### Dependencies
+- **Before:** `spotipy` (Spotify SDK), `requests`, `python-dotenv`
+- **After:** `requests` (HTTP), `python-dotenv` (for future extensibility)
 
 ## Workflow Schedule
 
@@ -89,36 +74,45 @@ You can adjust the cron expression to run on a different schedule, or click "Run
 
 `global_track_history.csv` has columns:
 - `Date` — YYYY-MM-DD when the scan ran
-- `Country` — Country name
+- `Country Code` — ISO country code (US, GB, CA, etc.)
+- `Country Name` — Full country name
 - `Artist` — Track artist
 - `Track Name` — Song title
-- `URI` — Spotify URI (can be used to embed/link tracks)
+- `Rank` — Position on the chart
 
-Example row:
+Example rows:
 ```
-2026-06-01,Iceland,Kaytranada,Well Kept Secret,spotify:track:1a2b3c...
+2026-06-01,US,United States,Taylor Swift,Anti-Hero,1
+2026-06-01,GB,United Kingdom,Olivia Rodrigo,vampire,2
+2026-06-01,CA,Canada,The Weeknd,Blinding Lights,3
 ```
 
 ## Troubleshooting
 
-**"Missing SPOTIPY_CLIENT_ID or SPOTIPY_CLIENT_SECRET"**
-- Check that the secrets are set in GitHub Settings > Secrets
-- Make sure the names match exactly (case-sensitive)
-
 **"No tracks found across all countries"**
-- Your API credentials may be invalid or revoked
-- Try running locally with `.env` to isolate the issue
+- Spotify's charts endpoint may be temporarily unavailable
+- Try running the workflow manually via the Actions tab
+- Check if `requests` library is installed correctly
 
 **Workflow doesn't run on schedule**
 - GitHub Actions requires at least one commit on the default branch in the past 60 days to keep scheduled workflows active
 - You can manually trigger via "Run workflow" in the Actions tab
 
-**"fatal: pathspec 'global_track_history.csv' did not match any files"**
-- This was the original error. Should be fixed now. If it resurfaces, the scan likely returned 0 tracks (check Spotify API credentials).
+**CSV file not created on first run**
+- The script creates the file automatically. If it doesn't appear, check the Actions log for errors.
+
+## Supported Countries
+
+The script currently supports 60+ countries with available Spotify chart data:
+
+US, GB, CA, AU, NZ, DE, FR, IT, ES, NL, BE, AT, CH, SE, NO, DK, FI, PL, CZ, HU, RO, PT, GR, IE, MX, BR, AR, CL, CO, PE, JP, KR, CN, IN, ID, TH, VN, PH, MY, SG, RU, UA, TR, ZA, EG, IL, SA, AE, HK, TW, EC, VE, UY, PY, CR, PA, DO, JM, TT, BS, PR, IS, LU, HR, BA, RS, BG, SI, SK, LT, LV, EE, CY, MT, LB, OM, KW, QA, BH, MA, TN, KE, NG, GH, UG, TZ, PK, BD, LK, NP, KH, LA, MM, TL, BN, MV
+
+To add more countries or modify the list, edit the `COUNTRY_CODE_MAP` in `main.py`.
 
 ## Future Enhancements
 
-- **Playlist creation from CSV:** Add a separate script that reads the CSV and creates a curated playlist
+- **Playlist creation:** Build a curated playlist from the weekly chart data
 - **Filtering:** Aggregate by region, genre, or language
-- **Database:** Store in a proper database instead of CSV for faster queries
-- **Visualization:** Create charts showing which countries have overlapping top tracks
+- **Database:** Store in PostgreSQL/SQLite for faster queries
+- **Visualization:** Create charts showing global music trends over time
+- **Notifications:** Alert when a track goes viral across regions
