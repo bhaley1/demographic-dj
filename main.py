@@ -5,179 +5,89 @@ from datetime import datetime
 import requests
 from dotenv import load_dotenv
 
-# Setup
 load_dotenv()
 
-# Mapping of country names to Spotify chart country codes
-COUNTRY_CODE_MAP = {
-    "United States": "US",
-    "United Kingdom": "GB",
-    "Canada": "CA",
-    "Australia": "AU",
-    "New Zealand": "NZ",
-    "Germany": "DE",
-    "France": "FR",
-    "Italy": "IT",
-    "Spain": "ES",
-    "Netherlands": "NL",
-    "Belgium": "BE",
-    "Austria": "AT",
-    "Switzerland": "CH",
-    "Sweden": "SE",
-    "Norway": "NO",
-    "Denmark": "DK",
-    "Finland": "FI",
-    "Poland": "PL",
-    "Czech Republic": "CZ",
-    "Hungary": "HU",
-    "Romania": "RO",
-    "Portugal": "PT",
-    "Greece": "GR",
-    "Ireland": "IE",
-    "Mexico": "MX",
-    "Brazil": "BR",
-    "Argentina": "AR",
-    "Chile": "CL",
-    "Colombia": "CO",
-    "Peru": "PE",
-    "Japan": "JP",
-    "South Korea": "KR",
-    "China": "CN",
-    "India": "IN",
-    "Indonesia": "ID",
-    "Thailand": "TH",
-    "Vietnam": "VN",
-    "Philippines": "PH",
-    "Malaysia": "MY",
-    "Singapore": "SG",
-    "Russia": "RU",
-    "Ukraine": "UA",
-    "Turkey": "TR",
-    "South Africa": "ZA",
-    "Egypt": "EG",
-    "Israel": "IL",
-    "Saudi Arabia": "SA",
-    "United Arab Emirates": "AE",
-    "Hong Kong": "HK",
-    "Taiwan": "TW",
-    "Ecuador": "EC",
-    "Venezuela": "VE",
-    "Uruguay": "UY",
-    "Paraguay": "PY",
-    "Costa Rica": "CR",
-    "Panama": "PA",
-    "Dominican Republic": "DO",
-    "Jamaica": "JM",
-    "Trinidad and Tobago": "TT",
-    "Bahamas": "BS",
-    "Puerto Rico": "PR",
-    "Iceland": "IS",
-    "Luxembourg": "LU",
-    "Croatia": "HR",
-    "Bosnia and Herzegovina": "BA",
-    "Serbia": "RS",
-    "Bulgaria": "BG",
-    "Slovenia": "SI",
-    "Slovakia": "SK",
-    "Lithuania": "LT",
-    "Latvia": "LV",
-    "Estonia": "EE",
-    "Cyprus": "CY",
-    "Malta": "MT",
-    "Lebanon": "LB",
-    "Oman": "OM",
-    "Kuwait": "KW",
-    "Qatar": "QA",
-    "Bahrain": "BH",
-    "Morocco": "MA",
-    "Tunisia": "TN",
-    "Kenya": "KE",
-    "Nigeria": "NG",
-    "Ghana": "GH",
-    "Uganda": "UG",
-    "Tanzania": "TZ",
-    "Pakistan": "PK",
-    "Bangladesh": "BD",
-    "Sri Lanka": "LK",
-    "Nepal": "NP",
-    "Cambodia": "KH",
-    "Laos": "LA",
-    "Myanmar": "MM",
-    "Timor-Leste": "TL",
-    "Brunei": "BN",
-    "Maldives": "MV",
-}
+LASTFM_API_KEY = os.getenv("LASTFM_API_KEY", "").strip()
+
+if not LASTFM_API_KEY:
+    print("❌ Missing LASTFM_API_KEY environment variable")
+    print("   Get a free key at: https://www.last.fm/api/account/create")
+    exit(1)
+
+# Countries supported by Last.fm's geo.gettoptracks endpoint
+COUNTRIES = [
+    "united states", "united kingdom", "canada", "australia", "new zealand",
+    "germany", "france", "italy", "spain", "netherlands",
+    "belgium", "austria", "switzerland", "sweden", "norway",
+    "denmark", "finland", "poland", "portugal", "greece",
+    "ireland", "mexico", "brazil", "argentina", "chile",
+    "colombia", "peru", "japan", "south korea", "india",
+    "indonesia", "thailand", "philippines", "malaysia", "singapore",
+    "russia", "ukraine", "turkey", "south africa", "egypt",
+    "israel", "saudi arabia", "united arab emirates", "taiwan",
+    "ecuador", "venezuela", "uruguay", "costa rica", "panama",
+    "dominican republic", "jamaica", "iceland", "croatia",
+    "serbia", "bulgaria", "romania", "slovakia", "czech republic",
+    "hungary", "lithuania", "latvia", "estonia", "luxembourg",
+    "morocco", "kenya", "nigeria", "ghana", "tanzania",
+    "pakistan", "bangladesh", "sri lanka", "vietnam",
+]
 
 
-def get_top_tracks_for_country(country_code, limit=5):
+def get_top_tracks_for_country(country, limit=5):
     """
-    Fetches top tracks from Spotify's public charts endpoint.
-    No authentication required.
+    Fetches top tracks for a country using Last.fm's free geo API.
+    Requires a free API key — no OAuth or user auth needed.
     """
     try:
-        url = f"https://charts.spotify.com/charts/top-200-{country_code}/latest/download"
-        response = requests.get(url, timeout=10)
+        url = "https://ws.audioscrobbler.com/2.0/"
+        params = {
+            "method": "geo.gettoptracks",
+            "country": country,
+            "api_key": LASTFM_API_KEY,
+            "format": "json",
+            "limit": limit,
+        }
+        response = requests.get(url, params=params, timeout=10)
         response.raise_for_status()
-        
-        # Parse CSV response
-        lines = response.text.strip().split('\n')
+        data = response.json()
+
+        if "error" in data:
+            return []
+
+        tracks_raw = data.get("tracks", {}).get("track", [])
+        if not tracks_raw:
+            return []
+
         tracks = []
-        
-        # Skip header row, take up to 'limit' rows
-        for line in lines[1:limit+1]:
-            parts = line.split(',')
-            if len(parts) >= 3:
-                try:
-                    tracks.append({
-                        'rank': parts[0],
-                        'name': parts[1].strip(),
-                        'artist': parts[2].strip(),
-                        'country_code': country_code
-                    })
-                except (IndexError, AttributeError):
-                    continue
-        
+        for i, t in enumerate(tracks_raw[:limit], 1):
+            tracks.append({
+                "rank": i,
+                "name": t.get("name", "Unknown"),
+                "artist": t.get("artist", {}).get("name", "Unknown"),
+                "country": country.title(),
+            })
         return tracks
-    except requests.exceptions.HTTPError:
-        # 404 or other HTTP error — country code not valid for charts
-        return []
-    except Exception as e:
-        return []
 
-
-def get_supported_countries():
-    """
-    Returns a list of countries with Spotify chart data available.
-    This is a curated list of supported country codes.
-    """
-    return list(COUNTRY_CODE_MAP.items())
+    except requests.exceptions.RequestException:
+        return []
+    except Exception:
+        return []
 
 
 def log_to_csv(track_data_list):
-    """Logs the weekly findings to a historical CSV file."""
+    """Appends weekly findings to global_track_history.csv."""
     filename = "global_track_history.csv"
     file_exists = os.path.isfile(filename)
-    
+
     try:
-        with open(filename, mode='a', newline='', encoding='utf-8') as file:
-            writer = csv.writer(file)
+        with open(filename, mode="a", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
             if not file_exists:
-                writer.writerow(["Date", "Country Code", "Country Name", "Artist", "Track Name", "Rank"])
-                
+                writer.writerow(["Date", "Country", "Rank", "Artist", "Track"])
             date_str = datetime.now().strftime("%Y-%m-%d")
-            for track in track_data_list:
-                # Reverse lookup country name from code
-                country_name = [name for name, code in COUNTRY_CODE_MAP.items() if code == track['country_code']]
-                country_name = country_name[0] if country_name else "Unknown"
-                
-                writer.writerow([
-                    date_str,
-                    track['country_code'],
-                    country_name,
-                    track['artist'],
-                    track['name'],
-                    track.get('rank', '')
-                ])
+            for t in track_data_list:
+                writer.writerow([date_str, t["country"], t["rank"], t["artist"], t["name"]])
         print(f"📄 Logged {len(track_data_list)} tracks to {filename}")
         return True
     except IOError as e:
@@ -186,44 +96,27 @@ def log_to_csv(track_data_list):
 
 
 def main():
-    countries = get_supported_countries()
-    all_track_data = []
-    
-    print(f"Scanning {len(countries)} countries for Spotify Charts...")
-    print("(Using Spotify's public charts endpoint — no API auth required)\n")
+    all_tracks = []
+    total = len(COUNTRIES)
+    print(f"Scanning {total} countries via Last.fm...\n")
 
-    for i, (country_name, country_code) in enumerate(countries, 1):
-        try:
-            tracks = get_top_tracks_for_country(country_code, limit=5)
-            if tracks:
-                all_track_data.extend(tracks)
-                print(f"✅ [{i:3d}/{len(countries)}] {country_name:20s} — {len(tracks)} tracks")
-            else:
-                print(f"⊘ [{i:3d}/{len(countries)}] {country_name:20s} — no chart data")
-            
-            # Small delay to avoid hammering the endpoint
-            time.sleep(0.05)
-        except KeyboardInterrupt:
-            print("\n⚠️  Scan interrupted by user")
-            break
-        except Exception as e:
-            print(f"❌ [{i:3d}/{len(countries)}] {country_name} — error: {e}")
-            continue
+    for i, country in enumerate(COUNTRIES, 1):
+        tracks = get_top_tracks_for_country(country, limit=5)
+        if tracks:
+            all_tracks.extend(tracks)
+            print(f"✅ [{i:3d}/{total}] {country.title():30s} — {len(tracks)} tracks")
+        else:
+            print(f"⊘  [{i:3d}/{total}] {country.title():30s} — no data")
+        time.sleep(0.1)
 
-    if not all_track_data:
-        print("\n❌ No tracks found across all countries.")
-        print("⚠️  Spotify charts endpoint may be unavailable.")
+    if not all_tracks:
+        print("\n❌ No tracks found. Check your LASTFM_API_KEY.")
         exit(1)
 
-    print(f"\n✅ Total tracks collected: {len(all_track_data)}")
-    
-    # Log to CSV
-    success = log_to_csv(all_track_data)
-    
-    if not success:
+    print(f"\n✅ Total tracks collected: {len(all_tracks)}")
+    if not log_to_csv(all_tracks):
         exit(1)
-    
-    print("\n✨ Weekly scan complete. CSV updated.")
+    print("✨ Done.")
 
 
 if __name__ == "__main__":
