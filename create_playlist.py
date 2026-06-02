@@ -1,7 +1,10 @@
 """
 Reads this week's tracks from global_track_history.csv, ranks them by
 how many countries they appeared in (each country weighted equally),
-takes the top 20, and creates a Spotify playlist.
+takes the top N, and creates a Spotify playlist.
+
+Uses a local URI cache (uri_cache.json) so tracks found once are never
+searched again. This keeps Spotify API calls minimal and avoids rate limits.
 """
 
 import os
@@ -25,7 +28,38 @@ if not all([CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN]):
     exit(1)
 
 SPOTIFY_API = "https://api.spotify.com/v1"
-TOP_N = 20  # Number of tracks to include in the playlist
+TOP_N = 40                      # Number of tracks in the playlist
+CACHE_FILE = "uri_cache.json"   # Stores track -> Spotify URI mappings
+
+
+def load_cache():
+    """Load the URI cache from disk. Returns empty dict if not found."""
+    if os.path.isfile(CACHE_FILE):
+        try:
+            with open(CACHE_FILE, encoding="utf-8") as f:
+                cache = json.load(f)
+            print(f"💾 Loaded URI cache: {len(cache)} known tracks")
+            return cache
+        except (json.JSONDecodeError, IOError):
+            print("⚠️  Cache file unreadable, starting fresh")
+            return {}
+    print("💾 No cache yet, starting fresh")
+    return {}
+
+
+def save_cache(cache):
+    """Write the URI cache back to disk."""
+    try:
+        with open(CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(cache, f, ensure_ascii=False, indent=2)
+        print(f"💾 Saved URI cache: {len(cache)} tracks")
+    except IOError as e:
+        print(f"⚠️  Could not save cache: {e}")
+
+
+def cache_key(track, artist):
+    """Build a normalized cache key for a track."""
+    return f"{track.lower().strip()}|||{artist.lower().strip()}"
 
 
 def get_access_token():
@@ -51,7 +85,7 @@ def get_current_user(headers):
 
 
 def search_track(track_name, artist_name, headers, retries=3):
-    """Search Spotify with retry on rate limit."""
+    """Search Spotify with retry on rate limit. Returns URI or None."""
     queries = [
         f"track:{track_name} artist:{artist_name}",
         f"{track_name} {artist_name}",
@@ -65,6 +99,10 @@ def search_track(track_name, artist_name, headers, retries=3):
             )
             if response.status_code == 429:
                 retry_after = int(response.headers.get("Retry-After", 5))
+                # If the wait is absurdly long (rate limit cooldown), bail out
+                if retry_after > 120:
+                    print(f"⏳ Rate limited for {retry_after}s — too long, skipping search.")
+                    return None
                 print(f"⏳ Rate limited. Waiting {retry_after}s...")
                 time.sleep(retry_after + 1)
                 continue
@@ -79,9 +117,8 @@ def search_track(track_name, artist_name, headers, retries=3):
 
 def get_top_global_tracks(csv_file="global_track_history.csv", top_n=TOP_N):
     """
-    Read the most recent week from the CSV and rank tracks by number of
-    countries they appeared in. Every country counts equally — no population
-    or stream weighting.
+    Rank tracks from the most recent week by number of countries charting.
+    Every country counts equally — no population or stream weighting.
     """
     if not os.path.isfile(csv_file):
         print(f"❌ {csv_file} not found.")
@@ -97,25 +134,20 @@ def get_top_global_tracks(csv_file="global_track_history.csv", top_n=TOP_N):
         print("❌ CSV is empty.")
         exit(1)
 
-    # Most recent date only
     latest_date = max(row["Date"] for row in rows)
     this_week = [row for row in rows if row["Date"] == latest_date]
     print(f"📅 Week of: {latest_date} | Entries: {len(this_week)}")
 
-    # Count how many distinct countries each track appears in
-    # Key: (track, artist) — lowercased for matching
     country_counts = Counter()
-    track_display = {}  # store original casing for display/search
+    track_display = {}
 
     for row in this_week:
         track = row["Track"].strip()
         artist = row["Artist"].strip()
-        country = row["Country"].strip()
         key = (track.lower(), artist.lower())
         country_counts[key] += 1
-        track_display[key] = (track, artist)  # keep original casing
+        track_display[key] = (track, artist)
 
-    # Sort by country count descending, take top N
     top_tracks = sorted(country_counts.items(), key=lambda x: x[1], reverse=True)[:top_n]
 
     print(f"\n🌍 Top {top_n} most globally widespread tracks this week:")
@@ -163,38 +195,61 @@ def main():
     _, display_name = get_current_user(headers)
     print(f"👤 Logged in as: {display_name}")
 
-    # Get top 20 tracks ranked by country count (equal weighting)
+    # Load the URI cache
+    cache = load_cache()
+
+    # Get top N tracks ranked by country count
     top_tracks, date_str = get_top_global_tracks(top_n=TOP_N)
 
-    # Search Spotify for each — only 20 searches, fast and under rate limit
-    print(f"\nSearching Spotify for {len(top_tracks)} tracks...")
+    # Resolve URIs: use cache first, only search for unknown tracks
+    print(f"\nResolving {len(top_tracks)} tracks (cache first)...")
     track_uris = []
-    found = 0
+    from_cache = 0
+    searched = 0
     not_found = 0
+    cache_updated = False
 
     for t in top_tracks:
+        key = cache_key(t["track"], t["artist"])
+
+        if key in cache:
+            if cache[key]:  # non-empty URI
+                track_uris.append(cache[key])
+                from_cache += 1
+            continue
+
+        # Not in cache — search Spotify
         uri = search_track(t["track"], t["artist"], headers)
+        searched += 1
         if uri:
             track_uris.append(uri)
-            found += 1
-            print(f"  ✅ {t['artist']} — {t['track']}")
+            cache[key] = uri
+            cache_updated = True
         else:
+            cache[key] = ""  # remember that it wasn't found
+            cache_updated = True
             not_found += 1
-            print(f"  ⊘  {t['artist']} — {t['track']} (not found on Spotify)")
         time.sleep(0.3)
 
-    print(f"\n✅ Found: {found} | Not found: {not_found}")
+    print(f"\n✅ From cache: {from_cache} | Searched: {searched} | Not found: {not_found}")
+
+    # Persist any new cache entries
+    if cache_updated:
+        save_cache(cache)
+
+    # Dedup URIs
+    track_uris = list(dict.fromkeys(track_uris))
 
     if not track_uris:
-        print("❌ No tracks found on Spotify. Try again in a few minutes.")
+        print("❌ No tracks resolved. If rate limited, try again later.")
         exit(1)
 
-    # Create playlist
+    # Create the playlist
     date_formatted = datetime.strptime(date_str, "%Y-%m-%d").strftime("%b %d, %Y")
-    playlist_name = f"Global Top 20 — {date_formatted}"
+    playlist_name = f"Global Top 40 — {date_formatted}"
     playlist_desc = (
-        f"Top 20 tracks ranked by number of countries charting (68 countries, "
-        f"equal weighting). Week of {date_formatted}. Powered by Last.fm."
+        f"Top 40 tracks ranked by number of countries charting "
+        f"(68 countries, equal weighting). Week of {date_formatted}. Powered by Last.fm."
     )
 
     playlist_id = create_playlist(playlist_name, playlist_desc, headers)
