@@ -1,124 +1,124 @@
-GLOBAL TOP 40 — Jun 21, 2026
+GLOBAL TOP 40 — Jun 28, 2026
 Ranked by number of countries charting (68 countries, equal weighting)
 Powered by Last.fm
 ============================================================
 
- 1. Olivia Rodrigo — stupid song
-    Countries: 51  |  https://open.spotify.com/search/stupid%20song%20Olivia%20Rodrigo
+ 1. Olivia Rodrigo — the cure
+    Countries: 47  |  https://open.spotify.com/search/the%20cure%20Olivia%20Rodrigo
 
- 2. Olivia Rodrigo — the cure
-    Countries: 50  |  https://open.spotify.com/search/the%20cure%20Olivia%20Rodrigo
+ 2. Olivia Rodrigo — stupid song
+    Countries: 46  |  https://open.spotify.com/search/stupid%20song%20Olivia%20Rodrigo
 
  3. Olivia Rodrigo — drop dead
-    Countries: 48  |  https://open.spotify.com/search/drop%20dead%20Olivia%20Rodrigo
+    Countries: 23  |  https://open.spotify.com/search/drop%20dead%20Olivia%20Rodrigo
 
- 4. Olivia Rodrigo — honeybee
-    Countries: 34  |  https://open.spotify.com/search/honeybee%20Olivia%20Rodrigo
+ 4. Malcolm Todd — Earrings
+    Countries: 17  |  https://open.spotify.com/search/Earrings%20Malcolm%20Todd
 
- 5. Olivia Rodrigo — maggots for brains
-    Countries: 16  |  https://open.spotify.com/search/maggots%20for%20brains%20Olivia%20Rodrigo
+ 5. PinkPantheress — Stateside + Zara Larsson
+    Countries: 17  |  https://open.spotify.com/search/Stateside%20%2B%20Zara%20Larsson%20PinkPantheress
 
- 6. Olivia Rodrigo — my way
-    Countries: 15  |  https://open.spotify.com/search/my%20way%20Olivia%20Rodrigo
+ 6. BTS — SWIM
+    Countries: 16  |  https://open.spotify.com/search/SWIM%20BTS
 
- 7. BTS — SWIM
-    Countries: 15  |  https://open.spotify.com/search/SWIM%20BTS
-
- 8. BTS — Come Over
-    Countries: 15  |  https://open.spotify.com/search/Come%20Over%20BTS
-
- 9. BTS — Body to Body
+ 7. BTS — Body to Body
     Countries: 15  |  https://open.spotify.com/search/Body%20to%20Body%20BTS
 
-10. Ariana Grande — hate that i made you love me
-    Countries: 12  |  https://open.spotify.com/search/hate%20that%20i%20made%20you%20love%20me%20Ariana%20Grande
+ 8. BTS — Hooligan
+    Countries: 14  |  https://open.spotify.com/search/Hooligan%20BTS
 
-11. BTS — 2.0
-    Countries: 12  |  https://open.spotify.com/search/2.0%20BTS
+ 9. Olivia Rodrigo — expectations
+    Countries: 10  |  https://open.spotify.com/search/expectations%20Olivia%20Rodrigo
 
-12. BTS — Hooligan
-    Countries: 11  |  https://open.spotify.com/search/Hooligan%20BTS
+10. Olivia Rodrigo — my way
+    Countries: 10  |  https://open.spotify.com/search/my%20way%20Olivia%20Rodrigo
 
-13. Malcolm Todd — Earrings
-    Countries: 8  |  https://open.spotify.com/search/Earrings%20Malcolm%20Todd
+11. Ariana Grande — hate that i made you love me
+    Countries: 10  |  https://open.spotify.com/search/hate%20that%20i%20made%20you%20love%20me%20Ariana%20Grande
 
-14. PinkPantheress — Stateside + Zara Larsson
-    Countries: 5  |  https://open.spotify.com/search/Stateside%20%2B%20Zara%20Larsson%20PinkPantheress
+12. BTS — 2.0
+    Countries: 10  |  https://open.spotify.com/search/2.0%20BTS
 
-15. BTS — NORMAL
-    Countries: 2  |  https://open.spotify.com/search/NORMAL%20BTS
+13. Olivia Rodrigo — honeybee
+    Countries: 9  |  https://open.spotify.com/search/honeybee%20Olivia%20Rodrigo
 
-16. KitschKrieg — Gut Genug (mit Blumengarten & Shirin David)
+14. BTS — Come Over
+    Countries: 8  |  https://open.spotify.com/search/Come%20Over%20BTS
+
+15. BTS — Merry Go Round
+    Countries: 5  |  https://open.spotify.com/search/Merry%20Go%20Round%20BTS
+
+16. Olivia Rodrigo — maggots for brains
+    Countries: 4  |  https://open.spotify.com/search/maggots%20for%20brains%20Olivia%20Rodrigo
+
+17. BTS — they don’t know ’bout us
+    Countries: 4  |  https://open.spotify.com/search/they%20don%E2%80%99t%20know%20%E2%80%99bout%20us%20BTS
+
+18. Michael Jackson — Chicago
+    Countries: 3  |  https://open.spotify.com/search/Chicago%20Michael%20Jackson
+
+19. The Killers — Mr. Brightside
+    Countries: 2  |  https://open.spotify.com/search/Mr.%20Brightside%20The%20Killers
+
+20. Temper City — Self Aware
+    Countries: 2  |  https://open.spotify.com/search/Self%20Aware%20Temper%20City
+
+21. Dominic Fike — Babydoll
+    Countries: 2  |  https://open.spotify.com/search/Babydoll%20Dominic%20Fike
+
+22. F3miii — NOBLE
+    Countries: 2  |  https://open.spotify.com/search/NOBLE%20F3miii
+
+23. Buba Corelli — Topovska
+    Countries: 2  |  https://open.spotify.com/search/Topovska%20Buba%20Corelli
+
+24. Drake — Janice STFU
+    Countries: 2  |  https://open.spotify.com/search/Janice%20STFU%20Drake
+
+25. BTS — Like Animals
+    Countries: 2  |  https://open.spotify.com/search/Like%20Animals%20BTS
+
+26. KitschKrieg — Gut Genug (mit Blumengarten & Shirin David)
     Countries: 1  |  https://open.spotify.com/search/Gut%20Genug%20%28mit%20Blumengarten%20%26%20Shirin%20David%29%20KitschKrieg
 
-17. Aya Nakamura — Sexy Nana
+27. Aya Nakamura — Sexy Nana
     Countries: 1  |  https://open.spotify.com/search/Sexy%20Nana%20Aya%20Nakamura
 
-18. Artie 5ive — SWAG MUSIC
+28. La Fève — FINIS-LES
+    Countries: 1  |  https://open.spotify.com/search/FINIS-LES%20La%20F%C3%A8ve
+
+29. Disiz — melodrama
+    Countries: 1  |  https://open.spotify.com/search/melodrama%20Disiz
+
+30. Artie 5ive — SWAG MUSIC
     Countries: 1  |  https://open.spotify.com/search/SWAG%20MUSIC%20Artie%205ive
 
-19. Glenmark Eriksson Strömstedt — När vi gräver guld i USA
+31. G.Mineiro — Splinter Cell
+    Countries: 1  |  https://open.spotify.com/search/Splinter%20Cell%20G.Mineiro
+
+32. Anna — WHITE GIRL WASTED
+    Countries: 1  |  https://open.spotify.com/search/WHITE%20GIRL%20WASTED%20Anna
+
+33. Glenmark Eriksson Strömstedt — När vi gräver guld i USA
     Countries: 1  |  https://open.spotify.com/search/N%C3%A4r%20vi%20gr%C3%A4ver%20guld%20i%20USA%20Glenmark%20Eriksson%20Str%C3%B6mstedt
 
-20. KESI — Drukner
+34. Zara Larsson — Midnight Sun
+    Countries: 1  |  https://open.spotify.com/search/Midnight%20Sun%20Zara%20Larsson
+
+35. Lamin — Cohiba
+    Countries: 1  |  https://open.spotify.com/search/Cohiba%20Lamin
+
+36. Lamin — Hold Mit Tempo
+    Countries: 1  |  https://open.spotify.com/search/Hold%20Mit%20Tempo%20Lamin
+
+37. KESI — Drukner
     Countries: 1  |  https://open.spotify.com/search/Drukner%20KESI
 
-21. louna0nline — m0ti0n
+38. Lamin — Låst Inde
+    Countries: 1  |  https://open.spotify.com/search/L%C3%A5st%20Inde%20Lamin
+
+39. Lamin — Sober
+    Countries: 1  |  https://open.spotify.com/search/Sober%20Lamin
+
+40. louna0nline — m0ti0n
     Countries: 1  |  https://open.spotify.com/search/m0ti0n%20louna0nline
-
-22. Vet Pillows — Rakkauden kesä
-    Countries: 1  |  https://open.spotify.com/search/Rakkauden%20kes%C3%A4%20Vet%20Pillows
-
-23. 米津玄師 — 烏 - Raven
-    Countries: 1  |  https://open.spotify.com/search/%E7%83%8F%20-%20Raven%20%E7%B1%B3%E6%B4%A5%E7%8E%84%E5%B8%AB
-
-24. BTS — Merry Go Round
-    Countries: 1  |  https://open.spotify.com/search/Merry%20Go%20Round%20BTS
-
-25. Manifest — Hileli
-    Countries: 1  |  https://open.spotify.com/search/Hileli%20Manifest
-
-26. Manifest — Daha İyi
-    Countries: 1  |  https://open.spotify.com/search/Daha%20%C4%B0yi%20Manifest
-
-27. Manifest — Snap
-    Countries: 1  |  https://open.spotify.com/search/Snap%20Manifest
-
-28. Manifest — KTS
-    Countries: 1  |  https://open.spotify.com/search/KTS%20Manifest
-
-29. Manifest — Amatör
-    Countries: 1  |  https://open.spotify.com/search/Amat%C3%B6r%20Manifest
-
-30. Michael Jackson — Chicago
-    Countries: 1  |  https://open.spotify.com/search/Chicago%20Michael%20Jackson
-
-31. Michael Jackson — Billie Jean
-    Countries: 1  |  https://open.spotify.com/search/Billie%20Jean%20Michael%20Jackson
-
-32. TUL8TE — Seneen
-    Countries: 1  |  https://open.spotify.com/search/Seneen%20TUL8TE
-
-33. The Marías — No One Noticed
-    Countries: 1  |  https://open.spotify.com/search/No%20One%20Noticed%20The%20Mar%C3%ADas
-
-34. Buba Corelli — Topovska
-    Countries: 1  |  https://open.spotify.com/search/Topovska%20Buba%20Corelli
-
-35. Simona — Прахосмукачка
-    Countries: 1  |  https://open.spotify.com/search/%D0%9F%D1%80%D0%B0%D1%85%D0%BE%D1%81%D0%BC%D1%83%D0%BA%D0%B0%D1%87%D0%BA%D0%B0%20Simona
-
-36. Ba. — 5K. PAROJE
-    Countries: 1  |  https://open.spotify.com/search/5K.%20PAROJE%20Ba.
-
-37. Ba. — (PA)LAIKAI MANE
-    Countries: 1  |  https://open.spotify.com/search/%28PA%29LAIKAI%20MANE%20Ba.
-
-38. Ba. — APMAUDU
-    Countries: 1  |  https://open.spotify.com/search/APMAUDU%20Ba.
-
-39. villemdrillem — mr. atškoo
-    Countries: 1  |  https://open.spotify.com/search/mr.%20at%C5%A1koo%20villemdrillem
-
-40. Nublu — kesselaid
-    Countries: 1  |  https://open.spotify.com/search/kesselaid%20Nublu
