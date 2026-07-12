@@ -1,46 +1,46 @@
-GLOBAL TOP 40 — Jul 05, 2026
+GLOBAL TOP 40 — Jul 12, 2026
 Ranked by number of countries charting (68 countries, equal weighting)
 Powered by Last.fm
 ============================================================
 
  1. Olivia Rodrigo — stupid song
-    Countries: 44  |  https://open.spotify.com/search/stupid%20song%20Olivia%20Rodrigo
+    Countries: 39  |  https://open.spotify.com/search/stupid%20song%20Olivia%20Rodrigo
 
  2. Olivia Rodrigo — the cure
-    Countries: 41  |  https://open.spotify.com/search/the%20cure%20Olivia%20Rodrigo
+    Countries: 35  |  https://open.spotify.com/search/the%20cure%20Olivia%20Rodrigo
 
- 3. Olivia Rodrigo — drop dead
+ 3. Malcolm Todd — Earrings
+    Countries: 27  |  https://open.spotify.com/search/Earrings%20Malcolm%20Todd
+
+ 4. Olivia Rodrigo — drop dead
     Countries: 25  |  https://open.spotify.com/search/drop%20dead%20Olivia%20Rodrigo
 
- 4. Malcolm Todd — Earrings
-    Countries: 22  |  https://open.spotify.com/search/Earrings%20Malcolm%20Todd
+ 5. Ariana Grande — hate that i made you love me
+    Countries: 15  |  https://open.spotify.com/search/hate%20that%20i%20made%20you%20love%20me%20Ariana%20Grande
 
- 5. BTS — SWIM
-    Countries: 17  |  https://open.spotify.com/search/SWIM%20BTS
+ 6. PinkPantheress — Stateside + Zara Larsson
+    Countries: 14  |  https://open.spotify.com/search/Stateside%20%2B%20Zara%20Larsson%20PinkPantheress
 
- 6. BTS — Body to Body
-    Countries: 15  |  https://open.spotify.com/search/Body%20to%20Body%20BTS
+ 7. BTS — SWIM
+    Countries: 14  |  https://open.spotify.com/search/SWIM%20BTS
 
- 7. BTS — Hooligan
-    Countries: 14  |  https://open.spotify.com/search/Hooligan%20BTS
+ 8. BTS — Body to Body
+    Countries: 13  |  https://open.spotify.com/search/Body%20to%20Body%20BTS
 
- 8. Olivia Rodrigo — honeybee
-    Countries: 12  |  https://open.spotify.com/search/honeybee%20Olivia%20Rodrigo
+ 9. BTS — 2.0
+    Countries: 12  |  https://open.spotify.com/search/2.0%20BTS
 
- 9. PinkPantheress — Stateside + Zara Larsson
-    Countries: 12  |  https://open.spotify.com/search/Stateside%20%2B%20Zara%20Larsson%20PinkPantheress
+10. BTS — Hooligan
+    Countries: 11  |  https://open.spotify.com/search/Hooligan%20BTS
 
-10. Ariana Grande — hate that i made you love me
-    Countries: 11  |  https://open.spotify.com/search/hate%20that%20i%20made%20you%20love%20me%20Ariana%20Grande
+11. Olivia Rodrigo — honeybee
+    Countries: 7  |  https://open.spotify.com/search/honeybee%20Olivia%20Rodrigo
 
-11. Olivia Rodrigo — expectations
-    Countries: 10  |  https://open.spotify.com/search/expectations%20Olivia%20Rodrigo
+12. Olivia Rodrigo — expectations
+    Countries: 6  |  https://open.spotify.com/search/expectations%20Olivia%20Rodrigo
 
-12. BTS — 2.0
-    Countries: 10  |  https://open.spotify.com/search/2.0%20BTS
-
-13. Olivia Rodrigo — my way
-    Countries: 5  |  https://open.spotify.com/search/my%20way%20Olivia%20Rodrigo
+13. Temper City — Self Aware
+    Countries: 5  |  https://open.spotify.com/search/Self%20Aware%20Temper%20City
 
 14. BTS — FYA
     Countries: 5  |  https://open.spotify.com/search/FYA%20BTS
@@ -48,77 +48,77 @@ Powered by Last.fm
 15. The Killers — Mr. Brightside
     Countries: 3  |  https://open.spotify.com/search/Mr.%20Brightside%20The%20Killers
 
-16. Temper City — Self Aware
-    Countries: 3  |  https://open.spotify.com/search/Self%20Aware%20Temper%20City
-
-17. BTS — they don’t know ’bout us
+16. BTS — they don’t know ’bout us
     Countries: 3  |  https://open.spotify.com/search/they%20don%E2%80%99t%20know%20%E2%80%99bout%20us%20BTS
 
-18. BTS — Come Over
-    Countries: 3  |  https://open.spotify.com/search/Come%20Over%20BTS
+17. Beyoncé — MORNING DEW (DONK)
+    Countries: 3  |  https://open.spotify.com/search/MORNING%20DEW%20%28DONK%29%20Beyonc%C3%A9
 
-19. BTS — Like Animals
-    Countries: 3  |  https://open.spotify.com/search/Like%20Animals%20BTS
+18. Dominic Fike — Babydoll
+    Countries: 2  |  https://open.spotify.com/search/Babydoll%20Dominic%20Fike
 
-20. Drake — Janice STFU
-    Countries: 3  |  https://open.spotify.com/search/Janice%20STFU%20Drake
+19. Madonna — Danceteria
+    Countries: 2  |  https://open.spotify.com/search/Danceteria%20Madonna
 
-21. Michael Jackson — Chicago
+20. Michael Jackson — Chicago
     Countries: 2  |  https://open.spotify.com/search/Chicago%20Michael%20Jackson
 
-22. Buba Corelli — Topovska
+21. The Marías — Sienna
+    Countries: 2  |  https://open.spotify.com/search/Sienna%20The%20Mar%C3%ADas
+
+22. F3miii — NOBLE
+    Countries: 2  |  https://open.spotify.com/search/NOBLE%20F3miii
+
+23. Buba Corelli — Topovska
     Countries: 2  |  https://open.spotify.com/search/Topovska%20Buba%20Corelli
 
-23. Jala Brat — Bass & Rave
+24. Jala Brat — Bass & Rave
     Countries: 2  |  https://open.spotify.com/search/Bass%20%26%20Rave%20Jala%20Brat
 
-24. Dominic Fike — Babydoll
-    Countries: 1  |  https://open.spotify.com/search/Babydoll%20Dominic%20Fike
+25. Drake — Janice STFU
+    Countries: 2  |  https://open.spotify.com/search/Janice%20STFU%20Drake
 
-25. Aya Nakamura — Sexy Nana
+26. BTS — NORMAL
+    Countries: 2  |  https://open.spotify.com/search/NORMAL%20BTS
+
+27. Olivia Rodrigo — maggots for brains
+    Countries: 1  |  https://open.spotify.com/search/maggots%20for%20brains%20Olivia%20Rodrigo
+
+28. Aya Nakamura — Sexy Nana
     Countries: 1  |  https://open.spotify.com/search/Sexy%20Nana%20Aya%20Nakamura
 
-26. Disiz — melodrama
+29. Disiz — melodrama
     Countries: 1  |  https://open.spotify.com/search/melodrama%20Disiz
 
-27. Artie 5ive — SWAG MUSIC
+30. Bad Bunny — NUEVAYoL
+    Countries: 1  |  https://open.spotify.com/search/NUEVAYoL%20Bad%20Bunny
+
+31. Anna — WHITE GIRL WASTED
+    Countries: 1  |  https://open.spotify.com/search/WHITE%20GIRL%20WASTED%20Anna
+
+32. Anna — MILLION DOLLAR BABE
+    Countries: 1  |  https://open.spotify.com/search/MILLION%20DOLLAR%20BABE%20Anna
+
+33. Anna — SCONTROSA
+    Countries: 1  |  https://open.spotify.com/search/SCONTROSA%20Anna
+
+34. Anna — SONO IO IL PASS
+    Countries: 1  |  https://open.spotify.com/search/SONO%20IO%20IL%20PASS%20Anna
+
+35. Artie 5ive — SWAG MUSIC
     Countries: 1  |  https://open.spotify.com/search/SWAG%20MUSIC%20Artie%205ive
 
-28. G.Mineiro — Splinter Cell
-    Countries: 1  |  https://open.spotify.com/search/Splinter%20Cell%20G.Mineiro
-
-29. Artie 5ive — DAVVERODAVVERO
-    Countries: 1  |  https://open.spotify.com/search/DAVVERODAVVERO%20Artie%205ive
-
-30. Quevedo — LA GRACIOSA
+36. Quevedo — LA GRACIOSA
     Countries: 1  |  https://open.spotify.com/search/LA%20GRACIOSA%20Quevedo
 
-31. Linkin Park — The Emptiness Machine
-    Countries: 1  |  https://open.spotify.com/search/The%20Emptiness%20Machine%20Linkin%20Park
+37. Quevedo — AL GOLPITO
+    Countries: 1  |  https://open.spotify.com/search/AL%20GOLPITO%20Quevedo
 
-32. Glenmark Eriksson Strömstedt — När vi gräver guld i USA
-    Countries: 1  |  https://open.spotify.com/search/N%C3%A4r%20vi%20gr%C3%A4ver%20guld%20i%20USA%20Glenmark%20Eriksson%20Str%C3%B6mstedt
-
-33. Zara Larsson — Midnight Sun
+38. Zara Larsson — Midnight Sun
     Countries: 1  |  https://open.spotify.com/search/Midnight%20Sun%20Zara%20Larsson
 
-34. Karpe — Her
-    Countries: 1  |  https://open.spotify.com/search/Her%20Karpe
+39. Kygo — Kygo Jo (feat. Lyng) - Kygo Remix
+    Countries: 1  |  https://open.spotify.com/search/Kygo%20Jo%20%28feat.%20Lyng%29%20-%20Kygo%20Remix%20Kygo
 
-35. Karpe — KARPE4LIFE
-    Countries: 1  |  https://open.spotify.com/search/KARPE4LIFE%20Karpe
-
-36. Lamin — Hold Mit Tempo
-    Countries: 1  |  https://open.spotify.com/search/Hold%20Mit%20Tempo%20Lamin
-
-37. Lamin — Cohiba
-    Countries: 1  |  https://open.spotify.com/search/Cohiba%20Lamin
-
-38. Annika — Desperado
-    Countries: 1  |  https://open.spotify.com/search/Desperado%20Annika
-
-39. KESI — Drukner
-    Countries: 1  |  https://open.spotify.com/search/Drukner%20KESI
-
-40. Guldimund — Vil du noget?
-    Countries: 1  |  https://open.spotify.com/search/Vil%20du%20noget%3F%20Guldimund
+40. Drillos — Alt for Norge
+    Countries: 1  |  https://open.spotify.com/search/Alt%20for%20Norge%20Drillos
