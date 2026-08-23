@@ -1,124 +1,124 @@
-GLOBAL TOP 40 — Aug 16, 2026
+GLOBAL TOP 40 — Aug 23, 2026
 Ranked by number of countries charting (68 countries, equal weighting)
 Powered by Last.fm
 ============================================================
 
- 1. Ariana Grande — Petal
-    Countries: 42  |  https://open.spotify.com/search/Petal%20Ariana%20Grande
+ 1. Phoebe Bridgers — Lost Boys
+    Countries: 23  |  https://open.spotify.com/search/Lost%20Boys%20Phoebe%20Bridgers
 
- 2. Olivia Rodrigo — the cure
-    Countries: 32  |  https://open.spotify.com/search/the%20cure%20Olivia%20Rodrigo
+ 2. Malcolm Todd — Earrings
+    Countries: 21  |  https://open.spotify.com/search/Earrings%20Malcolm%20Todd
 
- 3. Ariana Grande — hate that i made you love me
-    Countries: 30  |  https://open.spotify.com/search/hate%20that%20i%20made%20you%20love%20me%20Ariana%20Grande
+ 3. Phoebe Bridgers — Kill Me
+    Countries: 20  |  https://open.spotify.com/search/Kill%20Me%20Phoebe%20Bridgers
 
- 4. Malcolm Todd — Earrings
-    Countries: 20  |  https://open.spotify.com/search/Earrings%20Malcolm%20Todd
-
- 5. ADÉLA — Ain't In LA
+ 4. ADÉLA — Ain't In LA
     Countries: 20  |  https://open.spotify.com/search/Ain%27t%20In%20LA%20AD%C3%89LA
 
- 6. Olivia Rodrigo — stupid song
-    Countries: 17  |  https://open.spotify.com/search/stupid%20song%20Olivia%20Rodrigo
+ 5. Olivia Rodrigo — the cure
+    Countries: 19  |  https://open.spotify.com/search/the%20cure%20Olivia%20Rodrigo
 
- 7. BTS — Body to Body
-    Countries: 15  |  https://open.spotify.com/search/Body%20to%20Body%20BTS
+ 6. Phoebe Bridgers — Bobby
+    Countries: 17  |  https://open.spotify.com/search/Bobby%20Phoebe%20Bridgers
 
- 8. BTS — SWIM
-    Countries: 14  |  https://open.spotify.com/search/SWIM%20BTS
+ 7. Phoebe Bridgers — The Governor’s Waltz
+    Countries: 16  |  https://open.spotify.com/search/The%20Governor%E2%80%99s%20Waltz%20Phoebe%20Bridgers
 
- 9. BTS — Hooligan
-    Countries: 12  |  https://open.spotify.com/search/Hooligan%20BTS
+ 8. Tame Impala — Loser
+    Countries: 15  |  https://open.spotify.com/search/Loser%20Tame%20Impala
 
-10. BTS — 2.0
-    Countries: 12  |  https://open.spotify.com/search/2.0%20BTS
+ 9. BTS — SWIM
+    Countries: 15  |  https://open.spotify.com/search/SWIM%20BTS
 
-11. Phoebe Bridgers — Lost Boys
-    Countries: 9  |  https://open.spotify.com/search/Lost%20Boys%20Phoebe%20Bridgers
+10. Ariana Grande — Petal
+    Countries: 14  |  https://open.spotify.com/search/Petal%20Ariana%20Grande
 
-12. BTS — NORMAL
+11. BTS — Body to Body
+    Countries: 14  |  https://open.spotify.com/search/Body%20to%20Body%20BTS
+
+12. Phoebe Bridgers — The Outside
+    Countries: 12  |  https://open.spotify.com/search/The%20Outside%20Phoebe%20Bridgers
+
+13. Ariana Grande — hate that i made you love me
+    Countries: 12  |  https://open.spotify.com/search/hate%20that%20i%20made%20you%20love%20me%20Ariana%20Grande
+
+14. BTS — 2.0
+    Countries: 11  |  https://open.spotify.com/search/2.0%20BTS
+
+15. Olivia Rodrigo — stupid song
+    Countries: 10  |  https://open.spotify.com/search/stupid%20song%20Olivia%20Rodrigo
+
+16. BTS — Hooligan
+    Countries: 10  |  https://open.spotify.com/search/Hooligan%20BTS
+
+17. KATSEYE — HOOTIE FRUTTI
+    Countries: 9  |  https://open.spotify.com/search/HOOTIE%20FRUTTI%20KATSEYE
+
+18. BTS — NORMAL
     Countries: 7  |  https://open.spotify.com/search/NORMAL%20BTS
 
-13. Steve Lacy — Oh Yeah?
-    Countries: 6  |  https://open.spotify.com/search/Oh%20Yeah%3F%20Steve%20Lacy
+19. Fontaines D.C. — Marianne
+    Countries: 6  |  https://open.spotify.com/search/Marianne%20Fontaines%20D.C.
 
-14. PinkPantheress — Stateside + Zara Larsson
-    Countries: 6  |  https://open.spotify.com/search/Stateside%20%2B%20Zara%20Larsson%20PinkPantheress
+20. Steve Lacy — Oh Yeah?
+    Countries: 5  |  https://open.spotify.com/search/Oh%20Yeah%3F%20Steve%20Lacy
 
-15. Tame Impala — Loser
-    Countries: 6  |  https://open.spotify.com/search/Loser%20Tame%20Impala
+21. BTS — FYA
+    Countries: 3  |  https://open.spotify.com/search/FYA%20BTS
 
-16. BTS — FYA
-    Countries: 5  |  https://open.spotify.com/search/FYA%20BTS
+22. Slayyyter — BRAND NEW CHANEL$
+    Countries: 3  |  https://open.spotify.com/search/BRAND%20NEW%20CHANEL%24%20Slayyyter
 
-17. Charli xcx — Camera
-    Countries: 4  |  https://open.spotify.com/search/Camera%20Charli%20xcx
-
-18. Slayyyter — BRAND NEW CHANEL$
-    Countries: 4  |  https://open.spotify.com/search/BRAND%20NEW%20CHANEL%24%20Slayyyter
-
-19. Tame Impala — The Less I Know the Better
-    Countries: 4  |  https://open.spotify.com/search/The%20Less%20I%20Know%20the%20Better%20Tame%20Impala
-
-20. Phoebe Bridgers — The Outside
-    Countries: 3  |  https://open.spotify.com/search/The%20Outside%20Phoebe%20Bridgers
-
-21. Linkin Park — In the End
-    Countries: 3  |  https://open.spotify.com/search/In%20the%20End%20Linkin%20Park
-
-22. Ariana Grande — Like I Do
-    Countries: 3  |  https://open.spotify.com/search/Like%20I%20Do%20Ariana%20Grande
-
-23. Olivia Rodrigo — drop dead
-    Countries: 3  |  https://open.spotify.com/search/drop%20dead%20Olivia%20Rodrigo
+23. Dominic Fike — Babydoll
+    Countries: 2  |  https://open.spotify.com/search/Babydoll%20Dominic%20Fike
 
 24. Arctic Monkeys — 505
-    Countries: 3  |  https://open.spotify.com/search/505%20Arctic%20Monkeys
+    Countries: 2  |  https://open.spotify.com/search/505%20Arctic%20Monkeys
 
-25. The Marías — No One Noticed
-    Countries: 3  |  https://open.spotify.com/search/No%20One%20Noticed%20The%20Mar%C3%ADas
+25. PinkPantheress — Girl Like Me
+    Countries: 2  |  https://open.spotify.com/search/Girl%20Like%20Me%20PinkPantheress
 
-26. Temper City — Self Aware
-    Countries: 2  |  https://open.spotify.com/search/Self%20Aware%20Temper%20City
+26. Olivia Rodrigo — drop dead
+    Countries: 2  |  https://open.spotify.com/search/drop%20dead%20Olivia%20Rodrigo
 
-27. The Cure — Boys Don't Cry
-    Countries: 2  |  https://open.spotify.com/search/Boys%20Don%27t%20Cry%20The%20Cure
+27. The Marías — No One Noticed
+    Countries: 2  |  https://open.spotify.com/search/No%20One%20Noticed%20The%20Mar%C3%ADas
 
-28. Ariana Grande — Kiss Me
-    Countries: 1  |  https://open.spotify.com/search/Kiss%20Me%20Ariana%20Grande
+28. The Marías — Sienna
+    Countries: 2  |  https://open.spotify.com/search/Sienna%20The%20Mar%C3%ADas
 
-29. Aya Nakamura — Sexy Nana
+29. Panchiko — D>E>A>T>H>M>E>T>A>L
+    Countries: 2  |  https://open.spotify.com/search/D%3EE%3EA%3ET%3EH%3EM%3EE%3ET%3EA%3EL%20Panchiko
+
+30. PinkPantheress — Stateside + Zara Larsson
+    Countries: 2  |  https://open.spotify.com/search/Stateside%20%2B%20Zara%20Larsson%20PinkPantheress
+
+31. KATSEYE — Animal
+    Countries: 2  |  https://open.spotify.com/search/Animal%20KATSEYE
+
+32. BTS — Like Animals
+    Countries: 2  |  https://open.spotify.com/search/Like%20Animals%20BTS
+
+33. Aya Nakamura — Sexy Nana
     Countries: 1  |  https://open.spotify.com/search/Sexy%20Nana%20Aya%20Nakamura
 
-30. Artie 5ive — SWAG MUSIC
+34. Artie 5ive — SWAG MUSIC
     Countries: 1  |  https://open.spotify.com/search/SWAG%20MUSIC%20Artie%205ive
 
-31. Dominic Fike — Babydoll
-    Countries: 1  |  https://open.spotify.com/search/Babydoll%20Dominic%20Fike
+35. Dillom — Souvenir
+    Countries: 1  |  https://open.spotify.com/search/Souvenir%20Dillom
 
-32. The Killers — Mr. Brightside
-    Countries: 1  |  https://open.spotify.com/search/Mr.%20Brightside%20The%20Killers
-
-33. louna0nline — m0ti0n
-    Countries: 1  |  https://open.spotify.com/search/m0ti0n%20louna0nline
-
-34. Eppu Normaali — Tahroja paperilla
-    Countries: 1  |  https://open.spotify.com/search/Tahroja%20paperilla%20Eppu%20Normaali
-
-35. Dillom — La Nueva Violencia
+36. Dillom — La Nueva Violencia
     Countries: 1  |  https://open.spotify.com/search/La%20Nueva%20Violencia%20Dillom
 
-36. Dillom — Vedette
+37. Dillom — Vedette
     Countries: 1  |  https://open.spotify.com/search/Vedette%20Dillom
-
-37. Dillom — Papá Se Volvió Loco
-    Countries: 1  |  https://open.spotify.com/search/Pap%C3%A1%20Se%20Volvi%C3%B3%20Loco%20Dillom
 
 38. Dillom — Gente Común
     Countries: 1  |  https://open.spotify.com/search/Gente%20Com%C3%BAn%20Dillom
 
-39. Dillom — Souvenir
-    Countries: 1  |  https://open.spotify.com/search/Souvenir%20Dillom
+39. asia menor — Vi al diablo
+    Countries: 1  |  https://open.spotify.com/search/Vi%20al%20diablo%20asia%20menor
 
-40. BTS — they don’t know ’bout us
-    Countries: 1  |  https://open.spotify.com/search/they%20don%E2%80%99t%20know%20%E2%80%99bout%20us%20BTS
+40. ILLIT — IT'S ME
+    Countries: 1  |  https://open.spotify.com/search/IT%27S%20ME%20ILLIT
