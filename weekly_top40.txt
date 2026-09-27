@@ -1,124 +1,124 @@
-GLOBAL TOP 40 — Sep 20, 2026
+GLOBAL TOP 40 — Sep 27, 2026
 Ranked by number of countries charting (68 countries, equal weighting)
 Powered by Last.fm
 ============================================================
 
- 1. ADÉLA — Ain't In LA
+ 1. ADÉLA — NICOLE KIDMAN
+    Countries: 54  |  https://open.spotify.com/search/NICOLE%20KIDMAN%20AD%C3%89LA
+
+ 2. ADÉLA — Ain't In LA
     Countries: 52  |  https://open.spotify.com/search/Ain%27t%20In%20LA%20AD%C3%89LA
 
- 2. ADÉLA — NICOLE KIDMAN
-    Countries: 49  |  https://open.spotify.com/search/NICOLE%20KIDMAN%20AD%C3%89LA
-
  3. Olivia Rodrigo — the cure
-    Countries: 27  |  https://open.spotify.com/search/the%20cure%20Olivia%20Rodrigo
+    Countries: 26  |  https://open.spotify.com/search/the%20cure%20Olivia%20Rodrigo
 
  4. Malcolm Todd — Earrings
-    Countries: 23  |  https://open.spotify.com/search/Earrings%20Malcolm%20Todd
+    Countries: 25  |  https://open.spotify.com/search/Earrings%20Malcolm%20Todd
 
- 5. Olivia Rodrigo — stupid song
-    Countries: 17  |  https://open.spotify.com/search/stupid%20song%20Olivia%20Rodrigo
+ 5. Taylor Swift — Patient Zero
+    Countries: 21  |  https://open.spotify.com/search/Patient%20Zero%20Taylor%20Swift
 
- 6. Tame Impala — Loser
-    Countries: 12  |  https://open.spotify.com/search/Loser%20Tame%20Impala
+ 6. Olivia Rodrigo — stupid song
+    Countries: 14  |  https://open.spotify.com/search/stupid%20song%20Olivia%20Rodrigo
 
- 7. BTS — Body to Body
-    Countries: 11  |  https://open.spotify.com/search/Body%20to%20Body%20BTS
+ 7. Tame Impala — Loser
+    Countries: 11  |  https://open.spotify.com/search/Loser%20Tame%20Impala
 
- 8. BTS — SWIM
-    Countries: 11  |  https://open.spotify.com/search/SWIM%20BTS
+ 8. BTS — Body to Body
+    Countries: 9  |  https://open.spotify.com/search/Body%20to%20Body%20BTS
 
- 9. Slayyyter — CRANK 2
-    Countries: 10  |  https://open.spotify.com/search/CRANK%202%20Slayyyter
+ 9. BTS — SWIM
+    Countries: 8  |  https://open.spotify.com/search/SWIM%20BTS
 
-10. Ariana Grande — hate that i made you love me
-    Countries: 8  |  https://open.spotify.com/search/hate%20that%20i%20made%20you%20love%20me%20Ariana%20Grande
+10. KAROL G — BbY WOW
+    Countries: 7  |  https://open.spotify.com/search/BbY%20WOW%20KAROL%20G
 
-11. BTS — Hooligan
-    Countries: 8  |  https://open.spotify.com/search/Hooligan%20BTS
+11. Taylor Swift — Cleveland!
+    Countries: 7  |  https://open.spotify.com/search/Cleveland%21%20Taylor%20Swift
 
-12. KAROL G — BbY WOW
-    Countries: 6  |  https://open.spotify.com/search/BbY%20WOW%20KAROL%20G
+12. Ariana Grande — hate that i made you love me
+    Countries: 6  |  https://open.spotify.com/search/hate%20that%20i%20made%20you%20love%20me%20Ariana%20Grande
 
-13. ADÉLA — KGB
-    Countries: 6  |  https://open.spotify.com/search/KGB%20AD%C3%89LA
+13. BTS — Hooligan
+    Countries: 6  |  https://open.spotify.com/search/Hooligan%20BTS
 
-14. BTS — NORMAL
-    Countries: 6  |  https://open.spotify.com/search/NORMAL%20BTS
-
-15. BTS — 2.0
+14. BTS — 2.0
     Countries: 5  |  https://open.spotify.com/search/2.0%20BTS
 
-16. Steve Lacy — Oh Yeah?
-    Countries: 4  |  https://open.spotify.com/search/Oh%20Yeah%3F%20Steve%20Lacy
+15. ADÉLA — KGB
+    Countries: 5  |  https://open.spotify.com/search/KGB%20AD%C3%89LA
 
-17. BTS — FYA
-    Countries: 4  |  https://open.spotify.com/search/FYA%20BTS
+16. BTS — NORMAL
+    Countries: 4  |  https://open.spotify.com/search/NORMAL%20BTS
 
-18. PinkPantheress — Stateside + Zara Larsson
-    Countries: 3  |  https://open.spotify.com/search/Stateside%20%2B%20Zara%20Larsson%20PinkPantheress
+17. Panchiko — D>E>A>T>H>M>E>T>A>L
+    Countries: 4  |  https://open.spotify.com/search/D%3EE%3EA%3ET%3EH%3EM%3EE%3ET%3EA%3EL%20Panchiko
 
-19. Arctic Monkeys — 505
-    Countries: 3  |  https://open.spotify.com/search/505%20Arctic%20Monkeys
+18. bôa — Duvet
+    Countries: 3  |  https://open.spotify.com/search/Duvet%20b%C3%B4a
 
-20. Panchiko — D>E>A>T>H>M>E>T>A>L
-    Countries: 3  |  https://open.spotify.com/search/D%3EE%3EA%3ET%3EH%3EM%3EE%3ET%3EA%3EL%20Panchiko
+19. BTS — Like Animals
+    Countries: 3  |  https://open.spotify.com/search/Like%20Animals%20BTS
 
-21. The Neighbourhood — Sweater Weather
-    Countries: 2  |  https://open.spotify.com/search/Sweater%20Weather%20The%20Neighbourhood
+20. The Killers — Mr. Brightside
+    Countries: 2  |  https://open.spotify.com/search/Mr.%20Brightside%20The%20Killers
 
-22. Ariana Grande — Petal
-    Countries: 2  |  https://open.spotify.com/search/Petal%20Ariana%20Grande
+21. Taylor Swift — Pink Clouding
+    Countries: 2  |  https://open.spotify.com/search/Pink%20Clouding%20Taylor%20Swift
 
-23. Miley Cyrus — Bass Persuades
-    Countries: 2  |  https://open.spotify.com/search/Bass%20Persuades%20Miley%20Cyrus
+22. BTS — FYA
+    Countries: 2  |  https://open.spotify.com/search/FYA%20BTS
 
-24. Radiohead — Creep
-    Countries: 2  |  https://open.spotify.com/search/Creep%20Radiohead
+23. Radiohead — Let Down
+    Countries: 2  |  https://open.spotify.com/search/Let%20Down%20Radiohead
 
-25. TV Girl — Lovers Rock
-    Countries: 2  |  https://open.spotify.com/search/Lovers%20Rock%20TV%20Girl
-
-26. The Marías — No One Noticed
+24. The Marías — No One Noticed
     Countries: 2  |  https://open.spotify.com/search/No%20One%20Noticed%20The%20Mar%C3%ADas
 
-27. BTS — Like Animals
-    Countries: 2  |  https://open.spotify.com/search/Like%20Animals%20BTS
-
-28. ADÉLA — Boys
-    Countries: 2  |  https://open.spotify.com/search/Boys%20AD%C3%89LA
-
-29. Drake — Janice STFU
+25. Drake — Janice STFU
     Countries: 2  |  https://open.spotify.com/search/Janice%20STFU%20Drake
 
-30. Wir sind Helden — Von hier an blind
-    Countries: 1  |  https://open.spotify.com/search/Von%20hier%20an%20blind%20Wir%20sind%20Helden
+26. Steve Lacy — Oh Yeah?
+    Countries: 1  |  https://open.spotify.com/search/Oh%20Yeah%3F%20Steve%20Lacy
 
-31. Blanco — SOTTOGONNA
+27. Sfera Ebbasta — Lontano
+    Countries: 1  |  https://open.spotify.com/search/Lontano%20Sfera%20Ebbasta
+
+28. Blanco — SOTTOGONNA
     Countries: 1  |  https://open.spotify.com/search/SOTTOGONNA%20Blanco
 
-32. Artie 5ive — SWAG MUSIC
-    Countries: 1  |  https://open.spotify.com/search/SWAG%20MUSIC%20Artie%205ive
+29. Radiohead — Creep
+    Countries: 1  |  https://open.spotify.com/search/Creep%20Radiohead
 
-33. NIGHT SKINNY — Players Club '26 (feat. Lubi, Over Lapa, Flaco G, G. Mineiro, 18K, Macello , Enny P & Alkhazar)
-    Countries: 1  |  https://open.spotify.com/search/Players%20Club%20%2726%20%28feat.%20Lubi%2C%20Over%20Lapa%2C%20Flaco%20G%2C%20G.%20Mineiro%2C%2018K%2C%20Macello%20%2C%20Enny%20P%20%26%20Alkhazar%29%20NIGHT%20SKINNY
+30. Slowdive — When the Sun Hits
+    Countries: 1  |  https://open.spotify.com/search/When%20the%20Sun%20Hits%20Slowdive
 
-34. The Killers — Mr. Brightside
-    Countries: 1  |  https://open.spotify.com/search/Mr.%20Brightside%20The%20Killers
+31. HIM — Join Me - Razorblade Mix
+    Countries: 1  |  https://open.spotify.com/search/Join%20Me%20-%20Razorblade%20Mix%20HIM
 
-35. Cledos — Ei riidellä enää*
-    Countries: 1  |  https://open.spotify.com/search/Ei%20riidell%C3%A4%20en%C3%A4%C3%A4%2A%20Cledos
-
-36. louna0nline — m0ti0n
-    Countries: 1  |  https://open.spotify.com/search/m0ti0n%20louna0nline
-
-37. Otsochodzi — WIĘCEJ NIEBA
+32. Otsochodzi — WIĘCEJ NIEBA
     Countries: 1  |  https://open.spotify.com/search/WI%C4%98CEJ%20NIEBA%20Otsochodzi
 
-38. Depeche Mode — Enjoy the Silence
-    Countries: 1  |  https://open.spotify.com/search/Enjoy%20the%20Silence%20Depeche%20Mode
+33. Otsochodzi — HALO?
+    Countries: 1  |  https://open.spotify.com/search/HALO%3F%20Otsochodzi
 
-39. Giorgos Mazonakis — Ores Mikres
-    Countries: 1  |  https://open.spotify.com/search/Ores%20Mikres%20Giorgos%20Mazonakis
+34. Otsochodzi — NIENAWIDZĘ WARSZAWY
+    Countries: 1  |  https://open.spotify.com/search/NIENAWIDZ%C4%98%20WARSZAWY%20Otsochodzi
 
-40. Fontaines D.C. — Marianne
-    Countries: 1  |  https://open.spotify.com/search/Marianne%20Fontaines%20D.C.
+35. Ariana Grande — Petal
+    Countries: 1  |  https://open.spotify.com/search/Petal%20Ariana%20Grande
+
+36. ILLIT — IT'S ME
+    Countries: 1  |  https://open.spotify.com/search/IT%27S%20ME%20ILLIT
+
+37. 米津玄師 — IRIS OUT
+    Countries: 1  |  https://open.spotify.com/search/IRIS%20OUT%20%E7%B1%B3%E6%B4%A5%E7%8E%84%E5%B8%AB
+
+38. beabadoobee — write me a letter
+    Countries: 1  |  https://open.spotify.com/search/write%20me%20a%20letter%20beabadoobee
+
+39. Anuv Jain — Arz Kiya Hai | Coke Studio Bharat
+    Countries: 1  |  https://open.spotify.com/search/Arz%20Kiya%20Hai%20%7C%20Coke%20Studio%20Bharat%20Anuv%20Jain
+
+40. Arctic Monkeys — I Wanna Be Yours
+    Countries: 1  |  https://open.spotify.com/search/I%20Wanna%20Be%20Yours%20Arctic%20Monkeys
