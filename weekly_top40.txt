@@ -1,49 +1,49 @@
-GLOBAL TOP 40 — Oct 04, 2026
+GLOBAL TOP 40 — Oct 11, 2026
 Ranked by number of countries charting (68 countries, equal weighting)
 Powered by Last.fm
 ============================================================
 
  1. ADÉLA — NICOLE KIDMAN
-    Countries: 54  |  https://open.spotify.com/search/NICOLE%20KIDMAN%20AD%C3%89LA
+    Countries: 57  |  https://open.spotify.com/search/NICOLE%20KIDMAN%20AD%C3%89LA
 
  2. ADÉLA — Ain't In LA
-    Countries: 53  |  https://open.spotify.com/search/Ain%27t%20In%20LA%20AD%C3%89LA
+    Countries: 50  |  https://open.spotify.com/search/Ain%27t%20In%20LA%20AD%C3%89LA
 
  3. Olivia Rodrigo — the cure
-    Countries: 38  |  https://open.spotify.com/search/the%20cure%20Olivia%20Rodrigo
+    Countries: 36  |  https://open.spotify.com/search/the%20cure%20Olivia%20Rodrigo
 
  4. Olivia Rodrigo — stupid song
-    Countries: 22  |  https://open.spotify.com/search/stupid%20song%20Olivia%20Rodrigo
+    Countries: 25  |  https://open.spotify.com/search/stupid%20song%20Olivia%20Rodrigo
 
- 5. Taylor Swift — Patient Zero
-    Countries: 21  |  https://open.spotify.com/search/Patient%20Zero%20Taylor%20Swift
+ 5. Tinashe — Melatonin
+    Countries: 17  |  https://open.spotify.com/search/Melatonin%20Tinashe
 
  6. Malcolm Todd — Earrings
-    Countries: 17  |  https://open.spotify.com/search/Earrings%20Malcolm%20Todd
+    Countries: 16  |  https://open.spotify.com/search/Earrings%20Malcolm%20Todd
 
- 7. Tinashe — Melatonin
-    Countries: 13  |  https://open.spotify.com/search/Melatonin%20Tinashe
+ 7. BTS — SWIM
+    Countries: 11  |  https://open.spotify.com/search/SWIM%20BTS
 
  8. Tame Impala — Loser
-    Countries: 10  |  https://open.spotify.com/search/Loser%20Tame%20Impala
+    Countries: 8  |  https://open.spotify.com/search/Loser%20Tame%20Impala
 
- 9. BTS — SWIM
-    Countries: 9  |  https://open.spotify.com/search/SWIM%20BTS
+ 9. bôa — Duvet
+    Countries: 7  |  https://open.spotify.com/search/Duvet%20b%C3%B4a
 
 10. BTS — Body to Body
-    Countries: 8  |  https://open.spotify.com/search/Body%20to%20Body%20BTS
+    Countries: 7  |  https://open.spotify.com/search/Body%20to%20Body%20BTS
 
-11. BTS — 2.0
-    Countries: 7  |  https://open.spotify.com/search/2.0%20BTS
-
-12. KAROL G — BbY WOW
+11. KAROL G — BbY WOW
     Countries: 6  |  https://open.spotify.com/search/BbY%20WOW%20KAROL%20G
 
-13. bôa — Duvet
-    Countries: 6  |  https://open.spotify.com/search/Duvet%20b%C3%B4a
+12. BTS — Hooligan
+    Countries: 6  |  https://open.spotify.com/search/Hooligan%20BTS
 
-14. BTS — Hooligan
-    Countries: 5  |  https://open.spotify.com/search/Hooligan%20BTS
+13. BTS — 2.0
+    Countries: 6  |  https://open.spotify.com/search/2.0%20BTS
+
+14. BTS — Like Animals
+    Countries: 5  |  https://open.spotify.com/search/Like%20Animals%20BTS
 
 15. BTS — NORMAL
     Countries: 4  |  https://open.spotify.com/search/NORMAL%20BTS
@@ -54,71 +54,71 @@ Powered by Last.fm
 17. Panchiko — D>E>A>T>H>M>E>T>A>L
     Countries: 3  |  https://open.spotify.com/search/D%3EE%3EA%3ET%3EH%3EM%3EE%3ET%3EA%3EL%20Panchiko
 
-18. Tinashe — Too Easy
-    Countries: 3  |  https://open.spotify.com/search/Too%20Easy%20Tinashe
+18. Fontaines D.C. — Tongue
+    Countries: 3  |  https://open.spotify.com/search/Tongue%20Fontaines%20D.C.
 
-19. ADÉLA — KGB
-    Countries: 3  |  https://open.spotify.com/search/KGB%20AD%C3%89LA
-
-20. The Killers — Mr. Brightside
+19. The Killers — Mr. Brightside
     Countries: 2  |  https://open.spotify.com/search/Mr.%20Brightside%20The%20Killers
 
-21. Linkin Park — Faint
-    Countries: 2  |  https://open.spotify.com/search/Faint%20Linkin%20Park
+20. The Neighbourhood — Sweater Weather
+    Countries: 2  |  https://open.spotify.com/search/Sweater%20Weather%20The%20Neighbourhood
 
-22. BTS — Like Animals
-    Countries: 2  |  https://open.spotify.com/search/Like%20Animals%20BTS
+21. Slayyyter — BRAND NEW CHANEL$
+    Countries: 2  |  https://open.spotify.com/search/BRAND%20NEW%20CHANEL%24%20Slayyyter
 
-23. Tinashe — SUNGLASSES
-    Countries: 2  |  https://open.spotify.com/search/SUNGLASSES%20Tinashe
+22. Radiohead — Let Down
+    Countries: 2  |  https://open.spotify.com/search/Let%20Down%20Radiohead
 
-24. The Neighbourhood — Reflections
+23. Olivia Rodrigo — drop dead
+    Countries: 2  |  https://open.spotify.com/search/drop%20dead%20Olivia%20Rodrigo
+
+24. Tinashe — Nobody Wanna Dance Anymore
+    Countries: 2  |  https://open.spotify.com/search/Nobody%20Wanna%20Dance%20Anymore%20Tinashe
+
+25. The Neighbourhood — Reflections
     Countries: 2  |  https://open.spotify.com/search/Reflections%20The%20Neighbourhood
 
-25. Drake — Janice STFU
-    Countries: 2  |  https://open.spotify.com/search/Janice%20STFU%20Drake
-
-26. Asake — Gratitude
-    Countries: 2  |  https://open.spotify.com/search/Gratitude%20Asake
-
-27. Tony Boy — Una bara per due
-    Countries: 1  |  https://open.spotify.com/search/Una%20bara%20per%20due%20Tony%20Boy
-
-28. Sfera Ebbasta — Lontano
+26. Sfera Ebbasta — Lontano
     Countries: 1  |  https://open.spotify.com/search/Lontano%20Sfera%20Ebbasta
 
-29. HIM — Join Me - Razorblade Mix
-    Countries: 1  |  https://open.spotify.com/search/Join%20Me%20-%20Razorblade%20Mix%20HIM
+27. Guitarricadelafuente — La Nieve - Original song from the film La Bola Negra
+    Countries: 1  |  https://open.spotify.com/search/La%20Nieve%20-%20Original%20song%20from%20the%20film%20La%20Bola%20Negra%20Guitarricadelafuente
 
-30. Depeche Mode — Enjoy the Silence
+28. Tame Impala — The Less I Know the Better
+    Countries: 1  |  https://open.spotify.com/search/The%20Less%20I%20Know%20the%20Better%20Tame%20Impala
+
+29. Käärijä — Hyvää Puuta
+    Countries: 1  |  https://open.spotify.com/search/Hyv%C3%A4%C3%A4%20Puuta%20K%C3%A4%C3%A4rij%C3%A4
+
+30. Viivi — Sydän (feat. Elastinen)
+    Countries: 1  |  https://open.spotify.com/search/Syd%C3%A4n%20%28feat.%20Elastinen%29%20Viivi
+
+31. Otsochodzi — NIENAWIDZĘ WARSZAWY
+    Countries: 1  |  https://open.spotify.com/search/NIENAWIDZ%C4%98%20WARSZAWY%20Otsochodzi
+
+32. Depeche Mode — Enjoy the Silence
     Countries: 1  |  https://open.spotify.com/search/Enjoy%20the%20Silence%20Depeche%20Mode
 
-31. Fontaines D.C. — Tongue
-    Countries: 1  |  https://open.spotify.com/search/Tongue%20Fontaines%20D.C.
+33. Olivia Rodrigo — expectations
+    Countries: 1  |  https://open.spotify.com/search/expectations%20Olivia%20Rodrigo
 
-32. BTS — they don’t know ’bout us
-    Countries: 1  |  https://open.spotify.com/search/they%20don%E2%80%99t%20know%20%E2%80%99bout%20us%20BTS
-
-33. Mrs. GREEN APPLE — Brand New
+34. Mrs. GREEN APPLE — Brand New
     Countries: 1  |  https://open.spotify.com/search/Brand%20New%20Mrs.%20GREEN%20APPLE
-
-34. Mrs. GREEN APPLE — 共犯
-    Countries: 1  |  https://open.spotify.com/search/%E5%85%B1%E7%8A%AF%20Mrs.%20GREEN%20APPLE
 
 35. Mrs. GREEN APPLE — lulu.
     Countries: 1  |  https://open.spotify.com/search/lulu.%20Mrs.%20GREEN%20APPLE
 
-36. Arctic Monkeys — I Wanna Be Yours
+36. Mrs. GREEN APPLE — 共犯
+    Countries: 1  |  https://open.spotify.com/search/%E5%85%B1%E7%8A%AF%20Mrs.%20GREEN%20APPLE
+
+37. Arctic Monkeys — I Wanna Be Yours
     Countries: 1  |  https://open.spotify.com/search/I%20Wanna%20Be%20Yours%20Arctic%20Monkeys
 
-37. Anuv Jain — Arz Kiya Hai | Coke Studio Bharat
+38. Anuv Jain — Arz Kiya Hai | Coke Studio Bharat
     Countries: 1  |  https://open.spotify.com/search/Arz%20Kiya%20Hai%20%7C%20Coke%20Studio%20Bharat%20Anuv%20Jain
 
-38. The Neighbourhood — Sweater Weather
-    Countries: 1  |  https://open.spotify.com/search/Sweater%20Weather%20The%20Neighbourhood
+39. Mariah Deborah — Na Para Bang
+    Countries: 1  |  https://open.spotify.com/search/Na%20Para%20Bang%20Mariah%20Deborah
 
-39. The 1975 — About You
+40. The 1975 — About You
     Countries: 1  |  https://open.spotify.com/search/About%20You%20The%201975
-
-40. Manifest — Toz Pembe
-    Countries: 1  |  https://open.spotify.com/search/Toz%20Pembe%20Manifest
